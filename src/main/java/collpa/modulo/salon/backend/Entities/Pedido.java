@@ -26,7 +26,7 @@ public class Pedido {
     @Column(nullable = false)
     private Boolean estado;
 
-    @OneToMany(mappedBy = "pedidoId", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
 	private List<Delivery> delivery = new ArrayList<>();
 
     // GETTERS Y SETTERS
@@ -61,14 +61,6 @@ public class Pedido {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
-    }
-
-    public List<Delivery> getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(List<Delivery> delivery) {
-        this.delivery = delivery;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class Delivery {
 
     @ManyToOne
 	@JoinColumn(name = "pedido_id", nullable = false, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PE_DE"))
-	private Pedido pedidoId;
+	private Pedido pedido;
 
     @Column(nullable = false, length = 40)
     private String direccion;
@@ -36,12 +36,12 @@ public class Delivery {
         this.id = id;
     }
 
-    public Pedido getPedidoId() {
-        return pedidoId;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setPedidoId(Pedido pedidoId) {
-        this.pedidoId = pedidoId;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     public String getDireccion() {
@@ -72,7 +72,7 @@ public class Delivery {
     public String toString() {
         return "Delivery{" +
                 "id=" + id +
-                ", pedidoId=" + pedidoId +
+                ", pedidoId=" + pedido +
                 ", direccion='" + direccion + '\'' +
                 ", numeroContacto='" + numeroContacto + '\'' +
                 ", estado=" + estado +

@@ -34,7 +34,7 @@ public class DeliveryService implements IDeliveryService {
     public Delivery putDelivery(Delivery request, Long id) {
         Delivery delivery = deliveryRepository.findById(id).get();
 
-        delivery.setPedidoId(request.getPedidoId());
+        delivery.setPedido(request.getPedido());
         delivery.setDireccion(request.getDireccion());
         delivery.setNumeroContacto(request.getNumeroContacto());
 
@@ -50,10 +50,10 @@ public class DeliveryService implements IDeliveryService {
     public Delivery patchDelivery(Delivery request, Long id) {
         Delivery delivery = deliveryRepository.findById(id).get();
 
-        if (request.getPedidoId() == null) {
-            delivery.setPedidoId(delivery.getPedidoId());
+        if (request.getPedido() == null) {
+            delivery.setPedido(delivery.getPedido());
         } else {
-            delivery.setPedidoId(request.getPedidoId());
+            delivery.setPedido(request.getPedido());
         }
 
         if (request.getDireccion() == null){
